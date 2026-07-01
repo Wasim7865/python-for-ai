@@ -97,3 +97,39 @@ class TextProcessor:
 processor = TextProcessor(text="  Hello, World.  ")
 result = processor.clean().remove_punctuation().text
 print(result)
+
+from dotenv import load_dotenv
+import os
+
+# Load the .env file
+load_dotenv()
+
+# Now use your variables
+api_key = os.environ.get('API_KEY')
+debug = os.environ.get('DEBUG')
+database_url = os.environ.get('DATABASE_URL')
+
+print(f"API Key: {api_key}")
+print(f"Debug mode: {debug}")
+print(f"Database: {database_url}")
+
+# app.py
+from dotenv import load_dotenv
+import os
+import requests
+
+# Load environment variables
+load_dotenv()
+
+# Get API key
+API_KEY = os.environ.get('OPENAI_API_KEY')
+
+if not API_KEY:
+    print("Please set OPENAI_API_KEY in .env file")
+    exit(1)
+
+# Use the API
+headers = {"Authorization": f"Bearer {API_KEY}"}
+# Make your API calls...
+
+print(f"OPENAI_API_KEY:{API_KEY}")
