@@ -131,3 +131,5 @@ if not API_KEY:
 # Use the API
 headers = {"Authorization": f"Bearer {API_KEY}"}
 # Make your API calls...
+
+print(f"OPENAI_API_KEY:{API_KEY}")
